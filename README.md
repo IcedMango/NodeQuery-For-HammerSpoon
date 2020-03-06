@@ -1,13 +1,13 @@
 # NodeQuery Agent
 A NodeQuery Agent Lua Script For NodeQuery.com Running On HammerSpoon.
 
-#Percentage Mode Off
+# Percentage Mode Off
 ![Percentage Mode Off](https://raw.githubusercontent.com/IcedMango/NodeQuery-For-HammerSpoon/master/Images/PercentageModeOff.jpg)
 
-#Percentage Mode On
+# Percentage Mode On
 ![Percentage Mode On](https://raw.githubusercontent.com/IcedMango/NodeQuery-For-HammerSpoon/master/Images/PercentageModeOn.jpg)
 
-#Config
+# Config
 ```
 local config = {
     -- load percent mode, shows percentage only
