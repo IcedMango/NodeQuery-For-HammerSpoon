@@ -41,9 +41,7 @@ function loadServer(p)
     data = hs.json.decode(body)
     for k, v in pairs(data.data) do
         if type(v) == "table" then
-            for index, value in pairs(v) do
-                insertMenuItem(value)
-            end
+            for index, value in pairs(v) do insertMenuItem(value) end
         end
     end
 end
@@ -121,10 +119,13 @@ end
 loadAll = function()
     menubar:setTitle('⌛Loading')
     menuData = {
-        {title = 'Reload', fn = function() loadAll() end}, {title = '-'}
+        {
+            title = "Reload [Update Time:" .. os.date("%Y-%m-%d %H:%M:%S") ..
+                "]",
+            fn = function() loadAll() end
+        }, {title = "-"}
     }
     hs.timer.doAfter(0.2, function()
-        -- 循环验证token
         for k, v in ipairs(token) do
             if (v ~= nil) then validateToken(v) end
         end
@@ -135,4 +136,5 @@ loadAll = function()
 end
 
 loadAll()
-hs.timer.doEvery(120, loadAll)
+timer = hs.timer.doEvery(180, loadAll)
+timer:start()
